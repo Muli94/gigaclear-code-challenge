@@ -1,0 +1,62 @@
+{
+  "name": "gigaclear-code-challenge",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "eslint ./src --ext .ts --ext .tsx --fix",
+    "prettier": "prettier --check",
+    "prettier:fix": "prettier --write",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "git:pre-commit": "yarn lint-staged"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,tsx}": [
+      "eslint --max-warnings=0",
+      "jest --findRelatedTests --passWithNoTests"
+    ],
+    "*.{html,?(s)css,{j,t}s?(x),json,yml,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.2.1",
+    "@storybook/addon-interactions": "^7.2.1",
+    "@storybook/addon-links": "^7.2.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.2.1",
+    "@storybook/nextjs": "^7.2.1",
+    "@storybook/react": "^7.2.1",
+    "@storybook/testing-library": "^0.2.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@types/node": "20.4.6",
+    "@types/react": "18.2.18",
+    "@types/react-dom": "18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "husky": "^8.0.3",
+    "postcss": "8.4.27",
+    "prettier": "^3.0.1",
+    "storybook": "^7.2.1",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.1.6"
+  }
+}
