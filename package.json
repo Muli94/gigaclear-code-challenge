@@ -12,7 +12,8 @@
     "prettier:fix": "prettier ./src --write",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "git:pre-commit": "yarn lint-staged"
+    "git:pre-commit": "yarn lint-staged",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -54,6 +55,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.13",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "postcss": "8.4.27",
     "prettier": "^3.0.1",
     "storybook": "^7.2.1",
