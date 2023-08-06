@@ -22,9 +22,6 @@
     "./src/**/*.{ts,tsx}": [
       "eslint --max-warnings=0",
       "jest --findRelatedTests --passWithNoTests"
-    ],
-    "*.{html,?(s)css,{j,t}s?(x),json,yml,md}": [
-      "prettier . --write"
     ]
   },
   "dependencies": {
