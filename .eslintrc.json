@@ -21,9 +21,9 @@
     },
     "project": "./tsconfig.json"
   },
-  "plugins": ["react-hooks", "@typescript-eslint"],
+  "plugins": ["react-hooks", "@typescript-eslint", "compat"],
   "rules": {
-      // do not allow relative path import. only import from @src/*
+    // do not allow relative path import. only import from @src/*
     "no-restricted-imports": ["error", { "patterns": ["./*", "../*"] }],
     "quotes": ["error", "double", { "allowTemplateLiterals": true }],
     "prefer-const": "error",

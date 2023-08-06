@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint ./src --ext .ts --ext .tsx",
     "lint:fix": "eslint ./src --ext .ts --ext .tsx --fix",
-    "prettier": "prettier --check",
-    "prettier:fix": "prettier --write",
+    "prettier": "prettier ./src --check",
+    "prettier:fix": "prettier ./src --write",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "git:pre-commit": "yarn lint-staged"
@@ -23,7 +23,7 @@
       "jest --findRelatedTests --passWithNoTests"
     ],
     "*.{html,?(s)css,{j,t}s?(x),json,yml,md}": [
-      "prettier --write"
+      "prettier . --write"
     ]
   },
   "dependencies": {
@@ -48,7 +48,8 @@
     "@typescript-eslint/parser": "^6.2.1",
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
-    "eslint-config-next": "13.4.12",
+    "eslint-config-next": "13.4.8",
+    "eslint-plugin-compat": "^4.1.4",
     "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.13",
