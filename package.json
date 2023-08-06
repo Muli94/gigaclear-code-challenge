@@ -20,8 +20,10 @@
   },
   "lint-staged": {
     "./src/**/*.{ts,tsx}": [
-      "eslint ./src --max-warnings=0",
-      "jest --findRelatedTests --passWithNoTests"
+      "eslint --max-warnings=0"
+    ],
+    "*.{html,?(s)css,{j,t}s?(x),json,yml,md}": [
+      "prettier . --write"
     ]
   },
   "dependencies": {
