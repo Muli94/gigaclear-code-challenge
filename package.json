@@ -6,36 +6,47 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint ./src --ext .ts --ext .tsx",
     "lint:fix": "eslint ./src --ext .ts --ext .tsx --fix",
-    "prettier": "prettier --check",
-    "prettier:fix": "prettier --write",
+    "prettier": "prettier ./src --check",
+    "prettier:fix": "prettier ./src --write",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "git:pre-commit": "yarn lint-staged"
+    "git:pre-commit": "yarn lint-staged",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "lint-staged": {
     "./src/**/*.{ts,tsx}": [
-      "eslint --max-warnings=0",
-      "jest --findRelatedTests --passWithNoTests"
+      "eslint --max-warnings=0"
     ],
     "*.{html,?(s)css,{j,t}s?(x),json,yml,md}": [
-      "prettier --write"
+      "prettier . --write"
     ]
   },
+  "browserslist": [
+    "last 2 version and > 0.5% and not IE 11 and not op_mini all and not and_uc >= 0"
+  ],
   "dependencies": {
+    "@tanstack/query-core": "^4.32.6",
+    "@tanstack/react-query": "^4.32.6",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "date-fns": "^2.30.0",
     "next": "13.4.12",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tailwind-merge": "^1.14.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.2.1",
     "@storybook/addon-interactions": "^7.2.1",
     "@storybook/addon-links": "^7.2.1",
     "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/addon-styling": "^1.3.5",
     "@storybook/blocks": "^7.2.1",
     "@storybook/nextjs": "^7.2.1",
     "@storybook/react": "^7.2.1",
@@ -44,15 +55,18 @@
     "@types/node": "20.4.6",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
+    "@types/uuid": "^9.0.2",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
-    "eslint-config-next": "13.4.12",
+    "eslint-config-next": "13.4.8",
+    "eslint-plugin-compat": "^4.1.4",
     "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.13",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "postcss": "8.4.27",
     "prettier": "^3.0.1",
     "storybook": "^7.2.1",

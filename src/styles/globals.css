@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+:root {
+  --primary: 255 102 0;
+  --primary-lighter: 255, 102, 0, 0.08;
+
+  --secondary: 133, 0, 0;
+
+  --muted: 0, 0, 0, 0.11;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
