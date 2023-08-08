@@ -17,7 +17,7 @@ const variantsMapping = {
   body2: "p",
 };
 
-const typographyVariants = cva("font-medium", {
+const typographyVariants = cva("", {
   variants: {
     variant: {
       h1: "text-8xl",
@@ -34,6 +34,11 @@ const typographyVariants = cva("font-medium", {
     color: {
       primary: "text-primary-default",
       secondary: "text-secondary-default",
+      grey: "text-neutral-500",
+    },
+    fontWeight: {
+      normal: "font-medium",
+      bold: "font-bold",
     },
   },
   defaultVariants: {
@@ -44,16 +49,24 @@ const typographyVariants = cva("font-medium", {
 
 interface TypographyProps extends React.HTMLAttributes<HTMLHeadingElement | HTMLParagraphElement> {
   variant: keyof typeof variantsMapping;
-  color: "primary" | "secondary";
+  color: "primary" | "secondary" | "grey";
+  fontWeight?: "bold" | "normal";
   className?: string;
   children: React.ReactNode;
 }
 
-const Typography: React.FC<TypographyProps> = ({ children, color, className, variant, ...props }: TypographyProps) => {
+const Typography: React.FC<TypographyProps> = ({
+  children,
+  color,
+  className,
+  variant,
+  fontWeight = "normal",
+  ...props
+}: TypographyProps) => {
   const Component = variant ? variantsMapping[variant] : "p";
 
   return (
-    <Component {...props} className={cn(typographyVariants({ variant, color, className }))}>
+    <Component {...props} className={cn(typographyVariants({ variant, color, fontWeight, className }))}>
       {children}
     </Component>
   );

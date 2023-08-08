@@ -18,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
     <html lang="en">
       <body className={cn("bg-white", inter.className)}>
         <ReactQueryClientProvider>
-          <div className="fixed -z-10 top-0 left-0 right-0 h-[835px] bg-[url('../../public/bg.svg')] bg-top bg-cover bg-no-repeat" />
           <Header />
           <div className="m-auto lg:max-w-screen-xl p-8">{children}</div>
         </ReactQueryClientProvider>

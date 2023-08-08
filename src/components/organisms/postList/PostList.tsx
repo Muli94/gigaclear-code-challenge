@@ -18,12 +18,12 @@ function PostList(): JSX.Element {
       );
     }
 
-    return data.map(({ date, id, image, type, category, author, description }) => {
-      return <Post key={id} {...{ id, date, image, type, category, author, description }} />;
+    return data.map(({ date, id, thumbnail, type, category, author, description }) => {
+      return <Post key={id} {...{ id, date, thumbnail, type, category, author, description }} />;
     });
   }
 
-  return <div className="flex flex-wrap justify-between">{renderPosts()}</div>;
+  return <div className="flex flex-wrap justify-center md:justify-between">{renderPosts()}</div>;
 }
 
 export default PostList;
