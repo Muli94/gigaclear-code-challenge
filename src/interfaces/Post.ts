@@ -7,6 +7,7 @@ export interface Post {
   author: string;
   date: Date;
   image: string;
+  thumbnail: string;
   category: PostCategory;
   content: string;
   type: string;

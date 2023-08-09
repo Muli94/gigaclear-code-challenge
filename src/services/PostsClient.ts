@@ -12,9 +12,9 @@ class PostsClient {
     }
   }
 
-  static async getSinglePost(id: string): Promise<Post> {
+  static async getSinglePost(postId: string): Promise<Post> {
     try {
-      const response = await fetch(`http://localhost:3000/api/posts/${id}`);
+      const response = await fetch(`http://localhost:3000/api/posts/${postId}`);
       const data = await response.json();
 
       return data;
