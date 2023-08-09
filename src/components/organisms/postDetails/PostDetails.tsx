@@ -40,7 +40,7 @@ function PostDetails(): JSX.Element {
           </Typography>
         </div>
         <div className="w-full relative h-[200px] md:h-[500px] my-8">
-          <Image src={data.image} alt="Event" fill objectFit="fill" loading="lazy" />
+          <Image src={data.image} alt="Event" fill loading="lazy" />
         </div>
         <div className="flex justify-between flex-wrap w-full gap-4 md:gap-0">
           <div className="flex flex-col">
